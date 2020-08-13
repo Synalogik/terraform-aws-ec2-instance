@@ -109,6 +109,12 @@ variable "private_ips" {
   default     = []
 }
 
+variable "secondary_private_ips" {
+  description = "A list of secondary private IPv4 addresses to assign to the instance's primary network interface (eth0) in a VPC. Can only be assigned to the primary network interface (eth0) attached at instance creation, not a pre-existing network interface i.e. referenced in a network_interface block. Refer to the Elastic network interfaces documentation to see the maximum number of private IP addresses allowed per instance type."
+  type        = list(string)
+  default     = []
+}
+
 variable "source_dest_check" {
   description = "Controls if traffic is routed to the instance when the destination address does not match the instance. Used for NAT or VPNs."
   type        = bool

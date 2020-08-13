@@ -107,6 +107,7 @@ resource "aws_spot_instance_request" "this" {
   valid_from                      = var.spot_valid_from
   valid_until                     = var.spot_valid_until
   launch_group                    = var.spot_launch_group
+  secondary_private_ips           = var.secondary_private_ips
   # aws instance specific arguments
   ami              = var.ami
   instance_type    = var.instance_type
